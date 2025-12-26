@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../CSS/Home.css'
 
 const Home = () => {
-    const [isInput, setIsInput] = useState(false);
+    const navigate = useNavigate();
+    const [isInput, setIsInput] = useState(true);
     const [category, setCategory] = useState('');
     const [source, setSource] = useState('');
     const [suggestions, setSuggestions] = useState([]);
@@ -198,15 +200,15 @@ const Home = () => {
                 <div className="grid grid-cols-3 gap-4 text-center">
                     <div>
                         <h2 className="text-lg font-semibold" style={{ color: '#000000' }}>Total Income</h2>
-                        <p className="text-2xl font-bold" style={{ color: '#14213d' }}>$0</p>
+                        <p className="text-2xl font-bold text-green-600">$0</p>
                     </div>
                     <div>
                         <h2 className="text-lg font-semibold" style={{ color: '#000000' }}>Total Expense</h2>
-                        <p className="text-2xl font-bold" style={{ color: '#fca311' }}>$0</p>
+                        <p className="text-2xl font-bold text-red-600">$0</p>
                     </div>
                     <div>
                         <h2 className="text-lg font-semibold" style={{ color: '#000000' }}>Balance</h2>
-                        <p className="text-2xl font-bold" style={{ color: '#000000' }}>$0</p>
+                        <p className="text-2xl font-bold text-blue-600">$0</p>
                     </div>
                 </div>
             </div>
@@ -225,7 +227,11 @@ const Home = () => {
             <div className="p-6 rounded-lg shadow-md" style={{ backgroundColor: '#ffffff' }}>
                 <div className="flex justify-between items-center mb-4">
                     <h2 className="text-xl font-semibold" style={{ color: '#000000' }}>Recent Transactions</h2>
-                    <button className="font-bold py-2 px-4 rounded-md transition-colors hover:opacity-90" style={{ backgroundColor: '#fca311', color: '#ffffff' }}>
+                    <button
+                        className="font-bold py-2 px-4 rounded-md transition-colors hover:opacity-90"
+                        style={{ backgroundColor: '#fca311', color: '#ffffff' }}
+                        onClick={() => navigate('/transaction')}
+                    >
                         View All
                     </button>
                 </div>
