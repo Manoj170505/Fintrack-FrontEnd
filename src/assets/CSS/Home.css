@@ -1,0 +1,93 @@
+/* Toggle Button Styling */
+.toggle-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: 44px;
+    height: 24px;
+    background-color: #e5e5e5;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #ccc;
+    padding: 2px;
+}
+
+.toggle-btn.toggled {
+    background-color: #fca311;
+    border-color: #fca311;
+}
+
+.toggle-btn .thumb {
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-btn.toggled .thumb {
+    transform: translateX(12px);
+}
+
+/* Modal Styling */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    backdrop-filter: blur(2px);
+}
+
+.modal-content {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    width: 90%;
+    max-width: 320px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.time-input {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1.25rem;
+    border: 2px solid #e5e5e5;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+    text-align: center;
+    color: #14213d;
+}
+
+.time-input:focus {
+    outline: none;
+    border-color: #fca311;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.modal-btn {
+    flex: 1;
+    padding: 0.625rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+.modal-btn-save {
+    background-color: #14213d;
+    color: white;
+}
+
+.modal-btn-cancel {
+    background-color: #e5e5e5;
+    color: #000000;
+}
